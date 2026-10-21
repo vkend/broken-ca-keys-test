@@ -1,0 +1,13 @@
+[package]
+name = "check-roots"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# confirm-facts.sh: the root list bundled in webpki-roots, 1.0.9 against
+# 1.0.10, with rustls-webpki held at 0.103.15 (before its distrust list), so
+# only the root list changes.
+[dependencies]
+rustls-pki-types = "1.15.1"
+rustls-webpki = { version = "=0.103.15", features = ["ring"] }
+webpki-roots = "1.0.9"
